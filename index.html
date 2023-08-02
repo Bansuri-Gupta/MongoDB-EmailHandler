@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <style>
+      #particles-js {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+      }
+    </style>
+    
+  <script>
+    particlesJS("particles-js", {
+      particles: {
+        number: {
+          value: 150,
+          density: {
+            enable: true,
+            value_area: 800,
+          },
+        },
+        color: {
+          value: "#007bff",
+        },
+        shape: {
+          type: "circle",
+          stroke: {
+            width: 0,
+            color: "#000000",
+          },
+          polygon: {
+            nb_sides: 5,
+          },
+        },
+        opacity: {
+          value: 0.5,
+          random: false,
+          anim: {
+            enable: false,
+            speed: 1,
+            opacity_min: 0.1,
+            sync: false,
+          },
+        },
+        size: {
+          value: 4,
+          random: true,
+          anim: {
+            enable: false,
+            speed: 40,
+            size_min: 0.1,
+            sync: false,
+          },
+        },
+        line_linked: {
+          enable: true,
+          distance: 150,
+          color: "#007bff",
+          opacity: 0.4,
+          width: 1,
+        },
+        move: {
+          enable: true,
+          speed: 6,
+          direction: "none",
+          random: false,
+          straight: false,
+          out_mode: "out",
+          bounce: false,
+          attract: {
+            enable: false,
+            rotateX: 600,
+            rotateY: 1200,
+          },
+        },
+      },
+      interactivity: {
+        detect_on: "canvas",
+        events: {
+          onhover: {
+            enable: true,
+            mode: "repulse", // Set repulse mode for mouse interaction
+          },
+          onclick: {
+            enable: true,
+            mode: "repulse", // Set repulse mode for mouse interaction
+          },
+          resize: true,
+        },
+        modes: {
+          grab: {
+            distance: 400,
+            line_linked: {
+              opacity: 1,
+            },
+          },
+          bubble: {
+            distance: 400,
+            size: 40,
+            duration: 2,
+            opacity: 8,
+            speed: 3,
+          },
+          repulse: {
+            distance: 100,
+            duration: 0.4,
+          },
+          push: {
+            particles_nb: 4,
+          },
+          remove: {
+            particles_nb: 2,
+          },
+        },
+      },
+      retina_detect: true,
+    });
+    
+  </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Email Alert Subscription</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Poppins", Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background-color: #f5f5f5;
+        overflow: hidden;
+      }
+
+      #particles-js {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+      }
+
+      .container {
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        padding: 30px;
+        width: 400px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      h2 {
+        margin-bottom: 20px;
+        color: #007bff;
+        font-size: 28px;
+      }
+
+      label {
+        font-weight: bold;
+        margin-bottom: 10px;
+        color: #333333;
+      }
+
+      input,
+      select,
+      button {
+        width: 100%;
+        padding: 12px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 16px;
+        color: #333333;
+        transition: border-color 0.2s ease-in-out;
+      }
+
+      input:focus,
+      select:focus {
+        border-color: #007bff;
+      }
+
+      select {
+        margin-bottom: 25px;
+        appearance: none;
+        background-color: #ffffff;
+        background-image: url(""); /* Add the default image URL here */
+        background-size: 20px 20px;
+        background-repeat: no-repeat;
+        background-position: right 10px center;
+        padding-right: 30px;
+        cursor: pointer;
+      }
+
+      button {
+        background-color: #007bff;
+        color: #ffffff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease-in-out;
+        font-weight: bold;
+        font-size: 18px;
+      }
+
+      button:hover {
+        background-color: #0056b3;
+      }
+
+      .current-price {
+        font-weight: bold;
+        margin-top: 10px;
+        color: #007bff;
+      }
+
+      .sexy-font {
+        font-family: "Poppins", sans-serif;
+        font-weight: 700;
+        font-size: 18px;
+        color: #007bff;
+      }
+
+      /* Custom Notification */
+      .notification {
+        display: none;
+        position: fixed;
+        top: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #28a745;
+        color: #ffffff;
+        text-align: center;
+        padding: 10px;
+        font-size: 18px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        z-index: 9999;
+        animation: slideDown 0.5s ease-in-out;
+        border-radius: 5px;
+      }
+
+      @keyframes slideDown {
+        0% {
+          transform: translateY(-100%);
+        }
+
+        100% {
+          transform: translateY(0);
+        }
+      }
+      input,
+      select {
+        width: 100%;
+        box-sizing: border-box; /* Include padding and border in the width calculation */
+      }
+    </style>
+  </head>
+
+  <body>
+    
+    <div id="particles-js"></div>
+    <div class="container">
+        <h2>Email Alert Subscription</h2>
+        <form id="subscription-form">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required />
+      
+          <label for="cryptocurrency">Cryptocurrency:</label>
+          <div class="select-container">
+            <select id="cryptocurrency" name="cryptocurrency" required>
+              <!-- Options will be added dynamically using JavaScript -->
+            </select>
+            <!-- Display the cryptocurrency logo -->
+            <div class="logo-container">
+              <img id="crypto-logo" src="" alt="" />
+            </div>
+          </div>
+      
+          <!-- Display the current price -->
+          <p id="current-price" class="current-price"></p>
+      
+          <label for="target-price" class="sexy-font">Target Price:</label>
+          <input type="float" id="target-price" name="target-price" required />
+          <button type="submit">Subscribe!</button>
+        </form>
+      </div>
+      
+
+    <!-- Custom Notification -->
+    <div class="notification" id="notification">
+      Subscription successful! You will receive alerts.
+    </div>
+
+    <script src="./Scripts/index.js"></script>
+</style>
+<script>
+    particlesJS("particles-js", {
+      particles: {
+        number: {
+          value: 150,
+          density: {
+            enable: true,
+            value_area: 800,
+          },
+        },
+        color: {
+          value: "#007bff",
+        },
+        shape: {
+          type: "circle",
+          stroke: {
+            width: 0,
+            color: "#000000",
+          },
+          polygon: {
+            nb_sides: 5,
+          },
+        },
+        opacity: {
+          value: 0.5,
+          random: false,
+          anim: {
+            enable: false,
+            speed: 1,
+            opacity_min: 0.1,
+            sync: false,
+          },
+        },
+        size: {
+          value: 4,
+          random: true,
+          anim: {
+            enable: false,
+            speed: 40,
+            size_min: 0.1,
+            sync: false,
+          },
+        },
+        line_linked: {
+          enable: true,
+          distance: 150,
+          color: "#007bff",
+          opacity: 0.4,
+          width: 1,
+        },
+        move: {
+          enable: true,
+          speed: 6,
+          direction: "none",
+          random: false,
+          straight: false,
+          out_mode: "out",
+          bounce: false,
+          attract: {
+            enable: false,
+            rotateX: 600,
+            rotateY: 1200,
+          },
+        },
+      },
+      interactivity: {
+        detect_on: "canvas",
+        events: {
+          onhover: {
+            enable: true,
+            mode: "repulse",
+          },
+          onclick: {
+            enable: true,
+            mode: "push",
+          },
+          resize: true,
+        },
+        modes: {
+          grab: {
+            distance: 400,
+            line_linked: {
+              opacity: 1,
+            },
+          },
+          bubble: {
+            distance: 400,
+            size: 40,
+            duration: 2,
+            opacity: 8,
+            speed: 3,
+          },
+          repulse: {
+            distance: 100,
+            duration: 0.4,
+          },
+          push: {
+            particles_nb: 4,
+          },
+          remove: {
+            particles_nb: 2,
+          },
+          mouse: {},
+        },
+      },
+      retina_detect: true,
+    });
+  </script>
+<script>
+  // JavaScript to handle form submission and show notification
+document.addEventListener("DOMContentLoaded", () => {
+    const form = document.querySelector("form");
+    const notification = document.getElementById("notification");
+    const select = document.getElementById("cryptocurrency");
+    const currentPrice = document.getElementById("current-price");
+    const cryptoLogo = document.getElementById("crypto-logo");
+  
+    // The API code to fetch cryptocurrency data
+    const url = "https://li.quest/v1/tokens";
+    const options = { method: "GET", headers: { accept: "application/json" } };
+  
+    fetch(url, options)
+      .then((res) => res.json())
+      .then((json) => {
+        const tokens = json.tokens["1"];
+  
+        // Populate the dropdown options with cryptocurrency symbols
+        tokens.forEach((token) => {
+          const option = document.createElement("option");
+          option.value = token.symbol;
+          option.innerText = `${token.name} (${token.symbol})`;
+          select.appendChild(option);
+        });
+  
+        // Add event listener to the dropdown
+        select.addEventListener("change", () => {
+          const selectedSymbol = select.value;
+          const selectedToken = tokens.find(
+            (token) => token.symbol === selectedSymbol
+          );
+  
+          // Display the logo
+          cryptoLogo.src = selectedToken.logoURI;
+          cryptoLogo.alt = `${selectedToken.name} Logo`;
+  
+          // Display the current price
+          currentPrice.innerText = `Current Price: $${selectedToken.priceUSD}`;
+        });
+      })
+      .catch((err) => console.error("error:" + err));
+  
+    // Add form submission event listener
+    form.addEventListener("submit", function (event) {
+      event.preventDefault();
+  
+      // Display notification
+      notification.style.display = "block";
+  
+      setTimeout(function () {
+        notification.style.display = "none";
+      }, 3000);
+    });
+  });
+  
+  // installed : npm install express body-parser nodemailer nodemailer-sendgrid-transport
+</script>
+
+<script>
+  const { MongoClient, ServerApiVersion } = require("mongodb");
+const uri =
+  "mongodb+srv://bansuri13jan:6HymUqSwT6hVG6Vw@cluster0.zrdtsww.mongodb.net/?retryWrites=true&w=majority";
+
+// Create a MongoClient with a MongoClientOptions object to set the Stable API version
+const client = new MongoClient(uri, {
+  serverApi: {
+    version: ServerApiVersion.v1,
+    strict: true,
+    deprecationErrors: true,
+  },
+});
+
+async function run() {
+  try {
+    // Connect the client to the server	(optional starting in v4.7)
+    await client.connect();
+    // Send a ping to confirm a successful connection
+    await client.db("admin").command({ ping: 1 });
+    console.log(
+      "Pinged your deployment. You successfully connected to MongoDB!"
+    );
+  } finally {
+    // Ensures that the client will close when you finish/error
+    await client.close();
+  }
+}
+run().catch(console.dir);
+</script>
+
+<script>
+  // Import required modules
+const express = require("express");
+const bodyParser = require("body-parser");
+const mongoose = require("mongoose");
+const nodemailer = require("nodemailer");
+
+const app = express();
+const port = 5500;
+
+// Middleware to parse form data
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+
+// Connect to MongoDB (Replace 'mydatabase' with your database name)
+mongoose.connect("mongodb://localhost:27017/mydatabase", {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
+
+const db = mongoose.connection;
+db.on("error", console.error.bind(console, "MongoDB connection error:"));
+db.once("open", () => {
+  console.log("Connected to MongoDB!");
+});
+
+// Define the schema for user subscription
+const subscriptionSchema = new mongoose.Schema({
+  email: { type: String, required: true },
+  cryptocurrency: { type: String, required: true },
+  targetPrice: { type: Number, required: true },
+});
+
+const Subscription = mongoose.model("Subscription", subscriptionSchema);
+
+// Route for handling form submissions
+app.post("/subscribe", (req, res) => {
+  const { email, cryptocurrency, targetPrice } = req.body;
+
+  // Create a new Subscription document using the model
+  const newSubscription = new Subscription({
+    email: email,
+    cryptocurrency: cryptocurrency,
+    targetPrice: targetPrice,
+  });
+
+  // Save the new subscription document to the database
+  newSubscription.save((err, savedSubscription) => {
+    if (err) {
+      console.error("Error saving subscription:", err);
+      return res
+        .status(500)
+        .send("An error occurred while processing your request.");
+    }
+
+    console.log("Subscription details saved to MongoDB!");
+
+    // Send the "Thank you" email using Nodemailer
+    sendEmailConfirmation(email, cryptocurrency, targetPrice)
+      .then(() => {
+        console.log("Email sent successfully!");
+        res.send(
+          "Thank you for subscribing! Check your email for confirmation."
+        );
+      })
+      .catch((error) => {
+        console.error("Error sending email:", error);
+        res
+          .status(500)
+          .send("An error occurred while processing your request.");
+      });
+  });
+});
+
+// Function to send email confirmation
+async function sendEmailConfirmation(email, cryptocurrency, targetPrice) {
+  // Read the "Thank you" email template (Replace 'thankyou.html' with your email template file)
+  const thankYouEmailTemplate = require("fs").readFileSync(
+    "thankyou.html",
+    "utf-8"
+  );
+
+  // Fetch the current price of the chosen cryptocurrency (You can replace this with your own API if needed)
+  const { data: currentPriceData } = await axios.get(
+    `https://api.coingecko.com/api/v3/simple/price?ids=${cryptocurrency}&vs_currencies=usd`
+  );
+  const currentPrice = currentPriceData[cryptocurrency].usd;
+
+  // Prepare the email content using the template
+  const emailContent = thankYouEmailTemplate
+    .replace("{{ name }}", "Subscriber") // Replace with the user's name if you have it
+    .replace("{{ cryptocurrency }}", cryptocurrency)
+    .replace("{{ priceAtSubscription }}", currentPrice)
+    .replace("{{ targetPrice }}", targetPrice);
+
+  // Create a Nodemailer transporter
+  const transporter = nodemailer.createTransport({
+    host: "smtp-relay.brevo.com",
+    port: 587,
+    secure: false,
+    auth: {
+      user: "yourcompany@example.com", // Replace with your company's email address
+      pass: "your_email_password", // Replace with your email password
+    },
+  });
+
+  // Send the "Thank you" email using Nodemailer
+  await transporter.sendMail({
+    from: "yourcompany@example.com", // Replace with your company's email address
+    to: email,
+    subject: "Thank You for Subscribing!",
+    html: emailContent,
+  });
+}
+
+// Start the server
+app.listen(port, () => {
+  console.log(`Server listening at http://localhost:${port}`);
+});
+</script>
+
+  </body>
+</html>
+
+
+<!-- npx next dev --port 5500 -->
